@@ -1,8 +1,7 @@
-API key:
-jzbDBNIjFjdd6WGuDVqnOzJga
+Dashboard: https://developer.twitter.com/en/portal/dashboard
 
-API secret key:
-xea1fCuSMYOXEk96MhFMU3aDac8rkJETBbOtk4tCU8QwHwPRnB
+API key: jzbDBNIjFjdd6WGuDVqnOzJga
 
-Bearer token:
-AAAAAAAAAAAAAAAAAAAAAD31HwEAAAAA8%2FB6OXFtD7%2BQPIxpZm3Se6f08t0%3DxyvH0Qz5xRG6JlTL7tr5kKGoqhCsSX9ag9PVpYtAQ3JBQxz8xo
+API secret key: xea1fCuSMYOXEk96MhFMU3aDac8rkJETBbOtk4tCU8QwHwPRnB
+
+Bearer token: AAAAAAAAAAAAAAAAAAAAAD31HwEAAAAA8%2FB6OXFtD7%2BQPIxpZm3Se6f08t0%3DxyvH0Qz5xRG6JlTL7tr5kKGoqhCsSX9ag9PVpYtAQ3JBQxz8xo
