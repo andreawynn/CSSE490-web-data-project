@@ -4,6 +4,10 @@ API key: jzbDBNIjFjdd6WGuDVqnOzJga
 
 API secret key: xea1fCuSMYOXEk96MhFMU3aDac8rkJETBbOtk4tCU8QwHwPRnB
 
+Consumer key: jzbDBNIjFjdd6WGuDVqnOzJga
+
+Consumer secret key: xOoa17qrh23kT5Hp0e9VUaQ7i3yEAOoEmfRr872ID1RR0
+
 Bearer token: AAAAAAAAAAAAAAAAAAAAAD31HwEAAAAA8%2FB6OXFtD7%2BQPIxpZm3Se6f08t0%3DxyvH0Qz5xRG6JlTL7tr5kKGoqhCsSX9ag9PVpYtAQ3JBQxz8xo
 
 Tutorials:
