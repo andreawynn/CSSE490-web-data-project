@@ -28,8 +28,20 @@ class WebData(Tk):
 
         self.show_frame(StartPage)
 
-    def show_frame(self, cont):
-        frame = self.frames[cont]
+    # def show_frame(self, cont):
+    #     frame = self.frames[cont]
+    #     frame.tkraise()
+
+    def restart(self):
+        frame = self.frames[StartPage]
+        frame.tkraise()
+
+    def generate(self):
+        frame = self.frames[GenerateDatasetPage]
+        frame.tkraise()
+
+    def feedback(self):
+        frame = self.frames[CompletedDatasetPage]
         frame.tkraise()
 
 

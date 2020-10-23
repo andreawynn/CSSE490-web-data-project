@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter.ttk import *
 import time
-from StartPage import *
 
 LARGE_FONT = ("Verdana", 12)
 
@@ -20,6 +19,6 @@ class CompletedDatasetPage(Frame):
         lbl_hashtags = Label(self, text="Relevant Hashtags: Summer, Holidays")
         lbl_hashtags.pack()
 
-        #generate_new_dataset_btn = Button(self, text="Generate Another Dataset",
-        #                    command=lambda: controller.show_frame(StartPage))
-        #generate_new_dataset_btn.pack()
+        generate_new_dataset_btn = Button(self, text="Generate Another Dataset",
+                            command=lambda: controller.restart())
+        generate_new_dataset_btn.pack()
