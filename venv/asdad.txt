@@ -1,2 +1,0 @@
-ht1,ht2,ht3; post 1 text
-ht3,ht6,ht12; post 2 text
