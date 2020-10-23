@@ -1,11 +1,12 @@
-from Tkinter import *
-from ttk import *
+from tkinter import *
+from tkinter.ttk import *
 import time
 from CompletedDatasetPage import *
 from GenerateDatasetPage import *
 from StartPage import *
 
 LARGE_FONT = ("Verdana", 12)
+
 
 class WebData(Tk):
 

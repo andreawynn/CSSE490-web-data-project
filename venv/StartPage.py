@@ -1,9 +1,10 @@
-from Tkinter import *
-from ttk import *
+from tkinter import *
+from tkinter.ttk import *
 import time
 from GenerateDatasetPage import *
 
 LARGE_FONT = ("Verdana", 12)
+
 
 class StartPage(Frame):
 
@@ -44,21 +45,19 @@ class StartPage(Frame):
                                  command=lambda: self.start_generate(ht_ent.get(), num_ent.get(), fn_ent.get(), controller))
         generate_button.pack(pady=20, padx=10)
 
-
     def num_callback(self, input):
-        return input.isdigit()
+        return input.isdigit() or input == ""
 
     def fn_callback(self, input):
-        return input.isalnum()
+        return input.isalnum() or input == ""
 
     def ht_callback(self, input):
         # note: if the user types multiple consecutive spaces this won't catch that
         temp = input.replace(" ", "")
-        return temp.isalnum()
+        return temp.isalnum() or input == ""
 
     # start dataset generation
     def start_generate(self, ht, size, fn, controller):
         #TODO eventually parse a list of hashtags
-        self.destroy()
         controller.show_frame(GenerateDatasetPage) # TODO make this show up before calling generate!
         controller.frames[GenerateDatasetPage].generate(int(size), ht, fn)
