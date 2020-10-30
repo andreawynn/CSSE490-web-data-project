@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter.ttk import *
 import time
-from GenerateDatasetPage import *
 
 LARGE_FONT = ("Verdana", 12)
 
@@ -59,5 +58,4 @@ class StartPage(Frame):
     # start dataset generation
     def start_generate(self, ht, size, fn, controller):
         #TODO eventually parse a list of hashtags
-        controller.show_frame(GenerateDatasetPage) # TODO make this show up before calling generate!
-        controller.frames[GenerateDatasetPage].generate(int(size), ht, fn)
+        controller.generate(int(size), ht, fn) # TODO make this show up before calling generate!

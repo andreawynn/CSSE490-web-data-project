@@ -26,10 +26,19 @@ class WebData(Tk):
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(StartPage)
+        self.restart()
 
-    def show_frame(self, cont):
-        frame = self.frames[cont]
+    def restart(self):
+        frame = self.frames[StartPage]
+        frame.tkraise()
+
+    def generate(self, size, hashtags, filename):
+        frame = self.frames[GenerateDatasetPage]
+        frame.tkraise()
+        frame.generate(size, hashtags, filename)
+
+    def feedback(self):
+        frame = self.frames[CompletedDatasetPage]
         frame.tkraise()
 
 

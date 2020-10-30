@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter.ttk import *
-from CompletedDatasetPage import *
 from math import floor
+from TwitterStreamListener import *
 import time
 
 consumerKey = 'jzbDBNIjFjdd6WGuDVqnOzJga'
@@ -50,6 +50,8 @@ class GenerateDatasetPage(Frame):
                          "Check out our #AppleWatch Sport Bands below..."],
               ["summer", "Monoprinting - dreaming of #summer #holidays"]]
 
+        TwitterStreamListener.search_tweets(dataset_size, hashtag)
+
         for row in ds:
             # write to output file
             # format: ht1,ht2,...; post text
@@ -72,7 +74,7 @@ class GenerateDatasetPage(Frame):
         cmp_lbl.pack(pady=10, padx=10)
 
         finish_btn = Button(self, text="View Summary",
-                            command=lambda: self.controller.show_frame(CompletedDatasetPage))
+                            command=lambda: self.controller.feedback())
         finish_btn.pack()
 
 
