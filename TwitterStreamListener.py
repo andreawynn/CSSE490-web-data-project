@@ -13,8 +13,8 @@ class TwitterStreamListener(tweepy.streaming.StreamListener):
     def search_tweets(num_tweets, search_word):
         '''
         Takes in the number of tweets to return and the search word to look for in tweets
-        @:returns a list of tuples, with the first element of the tuple being the text of
-            the tweet and the second element being a list of all hashtags associated with
+        @:returns a list of tuples, with the second element of the tuple being the text of
+            the tweet and the first element being a list of all hashtags associated with
             the tweet
         '''
         if search_word[0] != '#':
@@ -36,6 +36,6 @@ class TwitterStreamListener(tweepy.streaming.StreamListener):
         #     except AttributeError:  # Not a Retweet
         #         text = tweet.full_text
 
-        return_data = [(tweet.full_text, tweet.entities['hashtags']) for tweet in tweet_list]
+        return_data = [(tweet.full_text, [hashtag['text'] for hashtag in tweet.entities['hashtags']]) for tweet in tweet_list]
 
         return return_data

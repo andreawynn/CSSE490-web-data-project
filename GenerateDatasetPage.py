@@ -39,28 +39,31 @@ class GenerateDatasetPage(Frame):
             # add 1 if needed to take care of the remainder
             if i < dataset_size % 10:
                 num += 1
-            print(num)
 
         # generate that many items (this links to Bohdan's code)
-        # TODO write this
-        #time.sleep(1)
-        ds = [["summer", "Damn i miss summer already #japan #summer"],
-              ["summer", "#summer #2021freeagency is everything"],
-              ["summer", "Looking to get into shape for #summer - we've got the perfect Apple Watch strap for you! "
-                         "Check out our #AppleWatch Sport Bands below..."],
-              ["summer", "Monoprinting - dreaming of #summer #holidays"]]
+        # ds = [["summer", "Damn i miss summer already #japan #summer"],
+        #       ["summer", "#summer #2021freeagency is everything"],
+        #       ["summer", "Looking to get into shape for #summer - we've got the perfect Apple Watch strap for you! "
+        #                  "Check out our #AppleWatch Sport Bands below..."],
+        #       ["summer", "Monoprinting - dreaming of #summer #holidays"]]
 
-        TwitterStreamListener.search_tweets(dataset_size, hashtag)
+        ds = TwitterStreamListener.search_tweets(dataset_size, hashtag)
 
         for row in ds:
             # write to output file
             # format: ht1,ht2,...; post text
-            for k in range(len(row)-2):
-                out.write(row[k])
-                out.write(",")
-            out.write(row[len(row)-2])
+            str = ""
+
+            for ht in row[1]:
+                str += ht
+                str += ","
+
+            str = str[:-1:]
+            out.write(str)
             out.write("; ")
-            out.write(row[len(row)-1])
+
+            # write out the post text
+            out.write(ascii(row[0]))
             out.write("\n")
 
         # update progress bar
@@ -74,5 +77,5 @@ class GenerateDatasetPage(Frame):
         cmp_lbl.pack(pady=10, padx=10)
 
         finish_btn = Button(self, text="View Summary",
-                            command=lambda: self.controller.feedback())
+                            command=lambda: self.controller.feedback(ds))
         finish_btn.pack()
