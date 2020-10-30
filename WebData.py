@@ -41,6 +41,5 @@ class WebData(Tk):
         frame = self.frames[CompletedDatasetPage]
         frame.tkraise()
 
-
 app = WebData()
 app.mainloop()
