@@ -17,7 +17,7 @@ class CompletedDatasetPage(Frame):
                             command=lambda: controller.restart())
         generate_new_dataset_btn.pack()
 
-    def showData(self, dataset):
+    def showData(self, dataset, hashtag):
         # TODO make this display more than one hashtag/dataset item
         sample_data = Label(self, text=dataset[0][0], font=LARGE_FONT)
         sample_data.pack()
@@ -25,8 +25,8 @@ class CompletedDatasetPage(Frame):
         lbl_hashtags = Label(self, text=dataset[0][1])
         lbl_hashtags.pack()
 
-        feedback_btn = Button(self, text="Not Relevant", command=lambda: self.feedback(dataset[0][1]))
-        feedback_btn.pack()
+        for ht in dataset[0][1]:
+            #feedback_btn = Button(self, text=txt, command=lambda: HashtagFilter.user_feedback([hashtag, ht], False))
+            Button(self, text="#" + ht + " Not Relevant",
+                   command=lambda: HashtagFilter.user_feedback([hashtag, ht], False)).pack(side=LEFT)
 
-    def feedback(self, hashtags):
-        print("Marked hashtags as irrelevant")

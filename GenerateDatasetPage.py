@@ -41,15 +41,8 @@ class GenerateDatasetPage(Frame):
             if i < dataset_size % 10:
                 num += 1
 
-        # generate that many items (this links to Bohdan's code)
-        # ds = [["summer", "Damn i miss summer already #japan #summer"],
-        #       ["summer", "#summer #2021freeagency is everything"],
-        #       ["summer", "Looking to get into shape for #summer - we've got the perfect Apple Watch strap for you! "
-        #                  "Check out our #AppleWatch Sport Bands below..."],
-        #       ["summer", "Monoprinting - dreaming of #summer #holidays"]]
-
+        # get the dataset
         ds = TwitterStreamListener.search_tweets(dataset_size, hashtag)
-
         ds = [(tweet_text, HashtagFilter.filter(hashtag_list)) for tweet_text, hashtag_list in ds]
 
         for row in ds:
@@ -70,7 +63,6 @@ class GenerateDatasetPage(Frame):
             out.write("\n")
 
         # update progress bar
-        # self.prog += num
         self.progress['value'] = (i + 1) * 10
 
         out.close()
@@ -80,5 +72,5 @@ class GenerateDatasetPage(Frame):
         cmp_lbl.pack(pady=10, padx=10)
 
         finish_btn = Button(self, text="View Summary",
-                            command=lambda: self.controller.feedback(ds))
+                            command=lambda: self.controller.feedback(ds, hashtag))
         finish_btn.pack()

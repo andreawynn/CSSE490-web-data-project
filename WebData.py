@@ -37,10 +37,10 @@ class WebData(Tk):
         frame.tkraise()
         frame.generate(size, hashtags, filename)
 
-    def feedback(self, ds):
+    def feedback(self, ds, hashtag):
         frame = self.frames[CompletedDatasetPage]
         frame.tkraise()
-        frame.showData(ds)
+        frame.showData(ds, hashtag)
 
 app = WebData()
 app.mainloop()
