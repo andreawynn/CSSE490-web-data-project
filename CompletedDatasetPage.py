@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter.ttk import *
+from HashtagFilter import *
 import time
 
 LARGE_FONT = ("Verdana", 12)

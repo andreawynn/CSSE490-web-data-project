@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter.ttk import *
 from math import floor
 from TwitterStreamListener import *
+from HashtagFilter import *
 import time
 
 consumerKey = 'jzbDBNIjFjdd6WGuDVqnOzJga'
@@ -48,6 +49,8 @@ class GenerateDatasetPage(Frame):
         #       ["summer", "Monoprinting - dreaming of #summer #holidays"]]
 
         ds = TwitterStreamListener.search_tweets(dataset_size, hashtag)
+
+        ds = [(tweet_text, HashtagFilter.filter(hashtag_list)) for tweet_text, hashtag_list in ds]
 
         for row in ds:
             # write to output file
